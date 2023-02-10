@@ -26,6 +26,6 @@ python run_speech_recognition_ctc.py \
     --chars_to_ignore , ? . ! - \; \: \" “ % ‘ ” � \
     --fp16 \
     --group_by_length \
-    --report_to wandb \
+    --push_to_hub \
     --run_name wav2vec2_spanish_cv \
     --do_train --do_eval 
