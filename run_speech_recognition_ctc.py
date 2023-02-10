@@ -444,8 +444,8 @@ def main():
             "csv",data_files={"train":path_args.train_dataset_csv,"eval":path_args.test_dataset_csv},
             cache_dir=path_args.cache_dataset_dir)
 
-        raw_datasets["train"] = raw_datasets["train"].remove_columns(["start_time","end_time"])
-        raw_datasets["eval"] = raw_datasets["eval"].remove_columns(["start_time","end_time"])
+        #raw_datasets["train"] = raw_datasets["train"].remove_columns(["start_time","end_time"])
+        #raw_datasets["eval"] = raw_datasets["eval"].remove_columns(["start_time","end_time"])
         raw_datasets["train"] = raw_datasets["train"].rename_column("audiofilename", "audio")
         raw_datasets["eval"] = raw_datasets["eval"].rename_column("audiofilename", "audio")
         raw_datasets["train"] = raw_datasets["train"].cast_column("audio", Audio(sampling_rate=16000))
