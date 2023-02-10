@@ -13,6 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 
+
+# These scripts are adapted and modified to work on own speech data
+# Input Training and Validation dataset: It can be a csv file with audiofilepath and reference transcript
+# Added new arguments in Essential Paths i.e. Path to training dataset, Testing dataset, and cache dir
+# On line 457: You can concate your own dataset with Huggingface datasets.   
+# By Aditya Parikh - CLST - Radboud University
+
 """ Fine-tuning a 🤗 Transformers CTC model for automatic speech recognition"""
 
 import functools
