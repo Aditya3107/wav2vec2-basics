@@ -15,8 +15,7 @@
 
 # These scripts are adapted and modified to work on own speech data
 # Input Training and Validation dataset: It can be a csv file with audiofilepath and reference transcript
-# Added new arguments in Essential Paths i.e. Path to training dataset, Testing dataset, and cache dir
-# On line 457: You can concate your own dataset with Huggingface datasets.   
+# Added new arguments in Essential Paths i.e. Path to training dataset, Testing dataset, and cache dir   
 # By Aditya Parikh - CLST - Radboud University
 
 """ Fine-tuning a 🤗 Transformers CTC model for automatic speech recognition"""
