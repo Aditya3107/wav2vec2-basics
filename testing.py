@@ -16,7 +16,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-test_csv = "/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/results_playground/sample.csv"
+test_csv = "Spanish_wav2vec2/results_playground/sample.csv"
 df = pd.read_csv(test_csv)
 #df = df.drop(np.r_[2:30,79:100,267:741])
 #df = df.dropna(inplace=True)
@@ -31,11 +31,11 @@ transcript_withlm = {}
 
 
 # import model, feature extractor, tokenizer
-model_lm = AutoModelForCTC.from_pretrained("/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/cache_model_dir")
-processor_lm = AutoProcessor.from_pretrained("/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/cache_model_dir")
+model_lm = AutoModelForCTC.from_pretrained("Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="Spanish_wav2vec2/cache_model_dir")
+processor_lm = AutoProcessor.from_pretrained("Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="Spanish_wav2vec2/cache_model_dir")
 
-model_wolm = Wav2Vec2ForCTC.from_pretrained("/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/cache_model_dir")
-processor_wolm = Wav2Vec2Processor.from_pretrained("/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/cache_model_dir")
+model_wolm = Wav2Vec2ForCTC.from_pretrained("Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="Spanish_wav2vec2/cache_model_dir")
+processor_wolm = Wav2Vec2Processor.from_pretrained("Spanish_wav2vec2/wav2vec2-common_voice-es-xls-r-300m",cache_dir="Spanish_wav2vec2/cache_model_dir")
 
 
 for i in df["audiofilename"]:
@@ -62,5 +62,5 @@ for i in tqdm(range(df.shape[0])):
         df.at[i, variable_name] = outputs.text
     
 
-df.to_csv("/vol/tensusers4/aparikh/Generic_Wav2vec2_models/Spanish_wav2vec2/results_playground/sample_ctg.csv",index=False)
+df.to_csv("Spanish_wav2vec2/results_playground/sample_output.csv",index=False)
 

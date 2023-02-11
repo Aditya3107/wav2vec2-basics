@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 python run_speech_recognition_ctc.py \
-    --train_dataset_csv="Spanish_wav2vec2/csv_datasets/workaround_w2v2_cvs.csv" \
-    --test_dataset_csv="Spanish_wav2vec2/csv_datasets/workaround_w2v2_cvs_test.csv"\
-    --cache_dir="Spanish_wav2vec2/cache_model_dir/" \
-    --cache_dataset_dir="Spanish_wav2vec2/cache_dataset_dir" \
+    --train_dataset_csv="path-to-/training_dataset.csv" \
+    --test_dataset_csv="path-to-/testing_dataset.csv"\
+    --cache_dir="path-to-/cache_model_dir/" \
+    --cache_dataset_dir="path-to-/cache_dataset_dir" \
     --dataset_name="common_voice" \
     --model_name_or_path="facebook/wav2vec2-xls-r-300m" \
     --the_asr_language="es" \
